@@ -89,19 +89,35 @@ def insert_rows(changelog_path, rows):
 
 
 def get_releases(sample):
+    """获取 DSH 官方全部 release 版本（分页拉取，不再只取最近 10 个）。"""
     if sample:
         return SAMPLE_RELEASES
     import requests
-    r = requests.get(API, timeout=20, headers={
-        "Accept": "application/vnd.github+json",
-        "User-Agent": "dsh-researcher",
-    })
-    r.raise_for_status()
-    data = r.json()
-    if not isinstance(data, list) or not data:
+    releases = []
+    page = 1
+    while True:
+        url = "https://api.github.com/repos/{0}/releases?per_page=100&page={1}".format(REPO, page)
+        try:
+            r = requests.get(url, timeout=25, headers={
+                "Accept": "application/vnd.github+json",
+                "User-Agent": "dsh-researcher",
+            })
+            r.raise_for_status()
+        except Exception as e:
+            # 抓取失败视为无更新（no-op），避免 workflow 因此失败
+            print("[no-op] 抓取 release 失败：{0}".format(e))
+            return []
+        data = r.json()
+        if not isinstance(data, list) or not data:
+            break
+        releases.extend(data)
+        if len(data) < 100:
+            break
+        page += 1
+    if not releases:
         print("[no-op] 未获取到 release 数据")
         return []
-    return data
+    return releases
 
 
 def main():

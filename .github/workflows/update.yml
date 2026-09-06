@@ -43,7 +43,7 @@ jobs:
           title: "🤖 检测到 DSH 新版本，请审阅后合并"
           branch: dsh-update/changelog
           commit-message: "docs(changelog): 自动追加 DSH 新版本事实草稿"
-          delete-branch-on-merge: true
+          delete-branch: true
           body: |
             ## 自动更新 · 审阅后合并
 
