@@ -1,4 +1,7 @@
 {
-  "latest_tag": null,
-  "seen_tags": []
+  "latest_tag": "dsh-v0.1.3-alpha.1",
+  "seen_tags": [
+    "dsh-v0.1.2-rc.1",
+    "dsh-v0.1.3-alpha.1"
+  ]
 }

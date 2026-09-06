@@ -69,14 +69,9 @@ features:
 3. 📂 [模板库](/templates/) —— 复制现成配置直接改
 4. 🩹 [故障排查](/troubleshoot/common-issues) —— 遇到报错优先看这里
 
-## 版本状态
+## 版本列表
 
-| Harness 版本 | 本站验证状态 | 迁移说明 |
-| --- | --- | --- |
-| 0.1.2-alpha | ✅ 已验证 | 当前主力版本 |
-| 0.1.1 | ⚠️ 部分兼容 | 配置存在 breaking-change，见[迁移说明](/troubleshoot/common-issues) |
-
-> 上游版本更新后会逐步验证并更新本站内容（由[自动更新流水线](/version-status)跟踪）。
+上游 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 的版本与更新说明，见 **[版本列表](/version-status)**（由自动更新流水线同步官方 Releases，最新在上）。
 
 ## 参与社区
 

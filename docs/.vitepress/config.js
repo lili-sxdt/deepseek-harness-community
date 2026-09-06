@@ -21,7 +21,7 @@ export default defineConfig({
       { text: '配置参考', link: '/config/config-yaml' },
       { text: '模板库', link: '/templates/' },
       { text: '故障排查', link: '/troubleshoot/common-issues' },
-      { text: '版本跟踪', link: '/version-status' },
+      { text: '版本列表', link: '/version-status' },
       { text: 'GitHub', link: 'https://github.com/lili-sxdt/deepseek-harness-community' }
     ],
     sidebar: {
