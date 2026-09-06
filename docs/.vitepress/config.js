@@ -9,11 +9,13 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
-    ['link', { rel: 'icon', href: '/deepseek-harness-community/assets/favicon.svg' }]
+    // favicon 在 head 里是原始 <link>，VitePress 不会自动加 base，这里写完整路径
+    ['link', { rel: 'icon', href: '/deepseek-harness-community/favicon.svg' }]
   ],
 
   themeConfig: {
-    logo: '/deepseek-harness-community/assets/logo.svg',
+    // logo 用不带 base 的路径，VitePress 会自动接上 base（放进 docs/public/ 保证能被访问）
+    logo: '/logo.svg',
     nav: [
       { text: '指南', link: '/guide/intro' },
       { text: '配置参考', link: '/config/config-yaml' },

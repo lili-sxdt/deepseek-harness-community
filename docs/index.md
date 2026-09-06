@@ -6,7 +6,7 @@ hero:
   text: 社区实战文档与模板库
   tagline: 第三方非官方｜部署 · 评测 · Agent编排 · 排错
   image:
-    src: /deepseek-harness-community/assets/logo.svg
+    src: /logo.svg
     alt: DeepSeek-Harness-Community
   actions:
     - theme: brand
