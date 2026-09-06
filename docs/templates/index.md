@@ -1,28 +1,31 @@
-# 模板库
+# 模板中心
 
-> 仓库 `templates/` 里存放可直接下载、复制修改的模板。**每个模板均标注：适用场景、修改要点、测过的版本。**
+> 一句话：复制就能改的现成配置，拿来跑。只放"标了验证状态"的模板，没实测不虚标。
 
-## ✅ 已提供
+这里优先做**最简单、最常用**的 2 个模板。复制 → 改几处 → 跑，就能用起来。
 
-**部署模板 `templates/deploy/`**
+## ① 最小配置（测一个模型）
 
-| 模板 | 适用场景 | 修改要点 |
-| --- | --- | --- |
-| `docker-compose.yml` | 一键本地/服务器 Docker 启动 | 改端口、挂载目录、模型端点、环境变量 |
+- **用途**：一次模型调用 + 一次简单评测
+- **文件**：`templates/configs/minimal.config.yaml`（[直接看](https://github.com/lili-sxdt/deepseek-harness-community/blob/main/templates/configs/minimal.config.yaml)）
+- **怎么用（复制 → 改 → 跑）**：
+  1. 复制到你的项目
+  2. 改这三处：`model.provider`（deepseek/ollama/vllm…）、`model.base_url`（模型地址）、`eval.dataset`（你的题目）
+  3. `harness run --config config.yaml` → 结果存 `./results`
+- **验证状态**：⬜ 未实测 · 以官方为准（结构正确，尚未帮你验证跑通）
 
-**配置模板 `templates/configs/`**
+## ② Docker 一键部署（本地/服务器）
 
-| 模板 | 适用场景 | 修改要点 |
-| --- | --- | --- |
-| `minimal.config.yaml` | 最小可运行：一次调用 + 一次评测 | 改 provider / base_url / 模型名 |
+- **用途**：一条命令起
+- **文件**：`templates/deploy/docker-compose.yml`（[直接看](https://github.com/lili-sxdt/deepseek-harness-community/blob/main/templates/deploy/docker-compose.yml)）
+- **怎么用**：复制 → 改端口 / 挂载目录 / 模型端点 → `docker compose up -d`
+- **验证状态**：⬜ 未实测 · 以官方为准
 
-## 🚧 建设中（需维护者真实验证后回填）
+## 每个模板都会标什么
 
-更多场景模板正在补齐：多智能体协作、代码评测、压测、数据集样例、结果解析脚本。
-> **这些只有在真实跑通并核验后才能上架**——本站保证配置准确、不误导。
+> 用途 / 难度 / **版本** / 依赖 / **复制→改** / 输入输出 / **已验证日期** / 风险。本站坚持：先实测、再标"✅ 已验证"，否则就诚实标"未实测"。
 
-## 用起来
+## 后续
 
-1. 复制想要的文件到你的项目
-2. 按「修改要点」改动
-3. 跑通后**欢迎回填你的可用配置到本站**（见[仓库](https://github.com/lili-sxdt/deepseek-harness-community)）
+- **脚本类**（解析结果、转数据集、画图）在补齐中。
+- 等你/贡献者实测跑通更多场景 → 按元数据规范补上来（见[贡献指南](/contributing)）。

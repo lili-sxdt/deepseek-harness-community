@@ -1,30 +1,40 @@
 import { defineConfig } from 'vitepress'
 
+// 「帮助中心」侧栏（多个路径共用）
+const helpSidebar = [
+  {
+    text: '帮助中心',
+    items: [
+      { text: '帮助中心', link: '/help' },
+      { text: 'FAQ', link: '/faq' },
+      { text: '故障排查', link: '/troubleshoot/common-issues' },
+      { text: '版本', link: '/version-status' },
+      { text: '贡献指南', link: '/contributing' },
+      { text: '最佳实践', link: '/best-practices' }
+    ]
+  }
+]
+
 export default defineConfig({
-  title: "DeepSeek-Harness-Community",
-  description: "DeepSeek-Harness 第三方社区文档、模板库",
-  // base 必须与 GitHub 仓库名逐字一致（普通 ASCII 连字符）
+  title: "DSH 实践站",
+  description: "DeepSeek-Harness 中文场景化实践站：把官方能力变成不同水平用户都能立刻行动的路径与模板。",
   base: '/deepseek-harness-community/',
   lang: 'zh-CN',
   lastUpdated: true,
 
   head: [
-    // favicon 在 head 里是原始 <link>，VitePress 不会自动加 base，这里写完整路径
-    ['link', { rel: 'icon', href: '/deepseek-harness-community/favicon.svg' }]
+    ['link', { rel: 'icon', href: '/deepseek-harness-community/favicon.svg' }],
+    ['style', ':root{--vp-c-brand-1:#4a6fa5;--vp-c-brand-2:#3f5f8f;--vp-c-brand-3:#35507a;}']
   ],
 
   themeConfig: {
-    // logo 用不带 base 的路径，VitePress 会自动接上 base（放进 docs/public/ 保证能被访问）
     logo: '/logo.svg',
     nav: [
-      { text: '指南', link: '/guide/intro' },
-      { text: '配置参考', link: '/config/config-yaml' },
-      { text: '模板库', link: '/templates/' },
-      { text: '故障排查', link: '/troubleshoot/common-issues' },
-      { text: 'FAQ', link: '/faq' },
-      { text: '最佳实践', link: '/best-practices' },
-      { text: '版本列表', link: '/version-status' },
-      { text: '贡献', link: '/contributing' },
+      { text: '社区首页', link: '/' },
+      { text: '入门指南', link: '/guide/intro' },
+      { text: '进阶实践', link: '/guide/advanced' },
+      { text: '模板中心', link: '/templates/' },
+      { text: '帮助中心', link: '/help' },
       { text: 'GitHub', link: 'https://github.com/lili-sxdt/deepseek-harness-community' }
     ],
     sidebar: {
@@ -32,39 +42,47 @@ export default defineConfig({
         {
           text: '入门指南',
           items: [
-            { text: '概念总览', link: '/guide/intro' },
+            { text: '入门指南', link: '/guide/intro' },
             { text: '最小示例', link: '/guide/minimal-demo' }
+          ]
+        },
+        {
+          text: '进阶实践',
+          items: [
+            { text: '概览', link: '/guide/advanced' },
+            { text: '插件（Plugin）', link: '/guide/plugin' },
+            { text: '技能（Skill）', link: '/guide/skill' },
+            { text: '工作流（Workflow）', link: '/guide/workflow' },
+            { text: '子代理（Subagent）', link: '/guide/subagent' },
+            { text: '自定义 Agent & 预设', link: '/guide/custom-agent' }
+          ]
+        },
+        {
+          text: '参考',
+          items: [
+            { text: '配置参考', link: '/config/config-yaml' },
+            { text: '目录结构', link: '/guide/dir-struct' }
           ]
         }
       ],
       '/config/': [
         {
-          text: '配置参考',
+          text: '参考',
           items: [
-            { text: 'config.yaml 总览', link: '/config/config-yaml' }
+            { text: '配置参考', link: '/config/config-yaml' },
+            { text: '目录结构', link: '/guide/dir-struct' }
           ]
         }
       ],
       '/templates/': [
-        { text: '模板库', link: '/templates/' }
+        { text: '模板中心', link: '/templates/' }
       ],
-      '/troubleshoot/': [
-        {
-          text: '故障排查',
-          items: [
-            { text: '常见问题', link: '/troubleshoot/common-issues' }
-          ]
-        }
-      ],
-      '/faq/': [
-        { text: 'FAQ', link: '/faq' }
-      ],
-      '/best-practices/': [
-        { text: '最佳实践', link: '/best-practices' }
-      ],
-      '/contributing/': [
-        { text: '贡献指南', link: '/contributing' }
-      ]
+      '/help/': helpSidebar,
+      '/faq/': helpSidebar,
+      '/troubleshoot/': helpSidebar,
+      '/version-status/': helpSidebar,
+      '/contributing/': helpSidebar,
+      '/best-practices/': helpSidebar
     },
     search: { provider: 'local' },
     outline: { level: [2, 3] },
@@ -73,7 +91,7 @@ export default defineConfig({
     ],
     footer: {
       message: '社区第三方站点，非 DeepSeek 官方，仅供学习研究使用。',
-      copyright: 'DeepSeek-Harness-Community'
+      copyright: 'DSH 实践站 · DeepSeek-Harness-Community'
     }
   }
 })

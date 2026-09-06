@@ -2,81 +2,54 @@
 layout: home
 
 hero:
-  name: DeepSeek-Harness-Community
-  text: 社区实战文档与模板库
-  tagline: 第三方非官方｜部署 · 评测 · Agent编排 · 排错
+  name: DSH 实践站
+  text: 把 DeepSeek-Harness 变成你能立刻行动的路径
+  tagline: 中文场景化实践 · 模板优先 · 由易到难
   image:
     src: /logo.svg
-    alt: DeepSeek-Harness-Community
+    alt: DSH 实践站
   actions:
     - theme: brand
-      text: 📖 快速开始
+      text: 先看入门指南
       link: /guide/intro
     - theme: alt
-      text: 📂 模板库
+      text: 从第一个模板开始
       link: /templates/
-    - theme: alt
-      text: ⚠️ 故障排查
-      link: /troubleshoot/common-issues
-
-features:
-  - icon: 🚀
-    title: 多方式部署指南
-    details: 源码、Docker Compose、多GPU服务器部署，含RTX Pro多卡落地经验
-  - icon: ⚙️
-    title: 完备配置参考
-    details: 大量实战 config.yaml 模板；多模型适配器、Agent工作流、压测参数详解
-  - icon: 🤖
-    title: Agent & 多智能体实战
-    details: Hermes-Agent 对接、工具调用、分支循环编排、自定义工具开发示例
-  - icon: 📊
-    title: 评测与数据集
-    details: 自定义评测集导入、结果导出、后处理脚本，可复现实验配置规范
-  - icon: 🛠️
-    title: 二次开发
-    details: 新增适配器、自定义评测指标、调用 Harness REST API
-  - icon: 🩹
-    title: 踩坑知识库
-    details: 依赖报错、OOM、超时、版本迁移坑点汇总，高频错误速查
 ---
 
 ::: warning 声明
-本站为**社区第三方站点**，不属于 DeepSeek 官方，仅供学习研究使用。
-上游项目：[deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)，文档验证版本见[版本状态](/version-status)。
+本站为**社区第三方站点**，非 DeepSeek 官方，仅供学习研究使用。上游：[deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)。具体命令/字段以官方为准。
 :::
 
-## 什么是 DeepSeek-Harness-Community
+## 🧭 新手指引：第一次进来，按这条走
 
-官方文档偏向接口说明，缺少落地实战案例。本站点目标：降低上手门槛，沉淀社区实战经验：
+> 别慌，按顺序来，3 步就有成就感。
 
-- 零基础跑通 harness
-- 本地私有模型接入评测流水线
-- 搭建 Agent 多智能体实验
-- 服务器多卡环境稳定运行
-- 快速定位报错，减少调试时间
+1. **花 3 分钟看[入门指南](/guide/intro)** —— 它是什么、怎么装、5 分钟跑通第一个示例
+2. **复制[模板](/templates/)跑通一次** —— 最小配置 + Docker 一键启动，先跑起来
+3. **卡住看[帮助中心](/help)** —— FAQ、故障排查，别自己硬扛
 
-## 适合人群
+## 热门模板
 
-- 在本地/服务器做大模型评测的开发者
-- 研究 Agent、多智能体工作流
-- 需要二次扩展 harness 能力
-- 遇到各种部署配置报错查找解决方案
+复制就能改、拿来跑。**只放"标了验证状态"的模板，没实测不虚标。**
 
-## 快速路径
+| 模板 | 用途 | 怎么用 |
+| --- | --- | --- |
+| 最小配置 | 测一个模型（一次调用+一次评测） | 复制 → 改模型名/地址/数据集 → 跑 |
+| Docker 一键部署 | 本地/服务器一条命令起 | 复制 → 改端口/挂载/模型端点 → `up -d` |
 
-1. 📖 [概念总览](/guide/intro) —— 先搞懂核心组件
-2. 🔧 [最小示例](/guide/minimal-demo) —— 跑通第一条任务
-3. 📂 [模板库](/templates/) —— 复制现成配置直接改
-4. 🩹 [故障排查](/troubleshoot/common-issues) —— 遇到报错优先看这里
-5. ❓ [FAQ](/faq) —— 常见提问速查
-6. 💡 [最佳实践](/best-practices) —— 安全、可复现、选型建议
+> 两个模板均标「**未实测 · 以官方为准**」（结构正确，但尚未帮你验证跑通）。等你实测后再升级"✅ 已验证"。
 
-## 版本列表
+## 按你现在要做什么进入
 
-上游 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 的版本与更新说明，见 **[版本列表](/version-status)**（由自动更新流水线同步官方 Releases，最新在上）。
+| 你的情况 | 去 |
+| --- | --- |
+| 完全不了解 | [入门指南](/guide/intro) |
+| 第一次使用 | [最小示例](/guide/minimal-demo) |
+| 已经在用 | [进阶实践](/guide/advanced) |
+| 正在开发扩展 | [模板中心](/templates/) · [帮助中心](/help) |
 
-## 参与社区
+## 用它做什么、不做什么
 
-- 💬 [Discussions](https://github.com/lili-sxdt/deepseek-harness-community/discussions) 提问交流
-- 📝 [贡献指南](/contributing) 提交模板、案例、文档修改
-- 📦 [仓库](https://github.com/lili-sxdt/deepseek-harness-community)
+- **擅长**：多模型评测、Agent 编排、压测、把 Codex/Claude 收编成子代理。
+- **不是**：替你干活的"聊天助手"；也不是官方文档的替代品。
