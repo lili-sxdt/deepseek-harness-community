@@ -16,7 +16,7 @@ const helpSidebar = [
 ]
 
 export default defineConfig({
-  title: "DeepSeek Harness 中文社区",
+  title: "DSH中文社区",
   description: "DeepSeek-Harness 中文场景化实践站：看懂它是什么、照着模板、立刻跑起来。",
   base: '/deepseek-harness-community/',
   lang: 'zh-CN',
@@ -91,7 +91,7 @@ export default defineConfig({
     ],
     footer: {
       message: '社区第三方站点，非 DeepSeek 官方，仅供学习研究使用。',
-      copyright: 'DeepSeek Harness 中文社区'
+      copyright: 'DSH中文社区'
     }
   }
 })

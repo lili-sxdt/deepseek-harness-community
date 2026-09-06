@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: DeepSeek Harness 中文社区
-  text: DeepSeek Harness：驾驭深度智能，释放无限可能
+  name: DSH中文社区
+  text: 驾驭深度智能，释放无限可能
   tagline: 中文场景化实践 · 模板优先 · 由易到难
   image:
     src: /logo.svg
