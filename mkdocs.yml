@@ -1,7 +1,7 @@
 # DeepSeek Harness 第三方参考站 —— MkDocs 配置
 # site_url 已预填为你的 GitHub Pages 地址（lili-sxdt/dsh-website）
 
-site_name: DeepSeek Harness 参考
+site_name: DSH 参考
 site_description: 第三方研究者整理的 DeepSeek Harness 参考读物（非官方）
 site_author: 李利课题组 · 小迪
 
@@ -11,8 +11,8 @@ site_url: "https://lili-sxdt.github.io/dsh-website/"
 theme:
   name: material
   language: zh
-  logo: assets/dsh-architecture.png   # 角落小标（可选，可去掉）
-  favicon: assets/dsh-architecture.png
+  logo: material/book-open-page-variant   # 干净的书本图标
+  favicon: assets/favicon.svg
   palette:
     - scheme: default
       toggle:

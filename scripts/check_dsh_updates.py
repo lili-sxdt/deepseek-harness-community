@@ -20,8 +20,7 @@ import os
 import re
 import sys
 
-REPO = "deepseek-ai/DeepSeek-Harness"
-API = "https://api.github.com/repos/{0}/releases?per_page=10".format(REPO)
+REPO = "deepseek-ai/deepseek-harness"   # 官方发布页仓库名（小写，见 /releases）
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)                      # 仓库根
@@ -60,15 +59,28 @@ def fmt_date(iso):
         return str(iso)[:10]
 
 
-def escape_cell(text):
-    return (text or "").replace("|", "\\|").replace("\n", " ").strip()
+def clean_text(text):
+    """把官方 release 说明净化成一行干净的摘要（去掉 markdown 链接/标题/代码/换行），
+    保证能放进表格单元格不破坏表格。"""
+    s = text or ""
+    s = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", s)      # 图片
+    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)  # 链接 -> 文字
+    s = re.sub(r"```.*?```", " ", s, flags=re.S)    # 代码块
+    s = re.sub(r"^#{1,6}\s*", "", s, flags=re.M)    # 标题标记
+    s = re.sub(r"[*_`~>]", "", s)                    # 粗体/斜体/代码/引用标记
+    s = re.sub(r"\s+", " ", s).strip()               # 压缩空白
+    s = s.replace("|", "\\|")                       # 转义竖线，避免拆列
+    if len(s) > 90:
+        s = s[:90].rstrip() + "…"
+    return s
 
 
 def make_row(rel):
     tag = rel.get("tag_name", "?")
     date = fmt_date(rel.get("published_at", ""))
-    body = escape_cell(rel.get("body", ""))[:80]      # 截断官方说明，避免撑爆表格
-    return "| {0} | {1} | {2} | （待研究者补充） |".format(tag, date, body)
+    body = clean_text(rel.get("body", ""))            # 净化成一行摘要，避免破坏表格
+    link = "https://github.com/{0}/releases/tag/{1}".format(REPO, tag)
+    return "| [{0}]({1}) | {2} | {3} | （待研究者补充） |".format(tag, link, date, body)
 
 
 def insert_rows(changelog_path, rows):
