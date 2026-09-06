@@ -21,7 +21,10 @@ export default defineConfig({
       { text: '配置参考', link: '/config/config-yaml' },
       { text: '模板库', link: '/templates/' },
       { text: '故障排查', link: '/troubleshoot/common-issues' },
+      { text: 'FAQ', link: '/faq' },
+      { text: '最佳实践', link: '/best-practices' },
       { text: '版本列表', link: '/version-status' },
+      { text: '贡献', link: '/contributing' },
       { text: 'GitHub', link: 'https://github.com/lili-sxdt/deepseek-harness-community' }
     ],
     sidebar: {
@@ -52,6 +55,15 @@ export default defineConfig({
             { text: '常见问题', link: '/troubleshoot/common-issues' }
           ]
         }
+      ],
+      '/faq/': [
+        { text: 'FAQ', link: '/faq' }
+      ],
+      '/best-practices/': [
+        { text: '最佳实践', link: '/best-practices' }
+      ],
+      '/contributing/': [
+        { text: '贡献指南', link: '/contributing' }
       ]
     },
     search: { provider: 'local' },

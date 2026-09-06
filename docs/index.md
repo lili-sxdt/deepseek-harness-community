@@ -68,6 +68,8 @@ features:
 2. 🔧 [最小示例](/guide/minimal-demo) —— 跑通第一条任务
 3. 📂 [模板库](/templates/) —— 复制现成配置直接改
 4. 🩹 [故障排查](/troubleshoot/common-issues) —— 遇到报错优先看这里
+5. ❓ [FAQ](/faq) —— 常见提问速查
+6. 💡 [最佳实践](/best-practices) —— 安全、可复现、选型建议
 
 ## 版本列表
 
@@ -76,4 +78,5 @@ features:
 ## 参与社区
 
 - 💬 [Discussions](https://github.com/lili-sxdt/deepseek-harness-community/discussions) 提问交流
-- 📝 [仓库](https://github.com/lili-sxdt/deepseek-harness-community) 提交模板、案例、文档修改
+- 📝 [贡献指南](/contributing) 提交模板、案例、文档修改
+- 📦 [仓库](https://github.com/lili-sxdt/deepseek-harness-community)
