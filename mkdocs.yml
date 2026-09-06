@@ -1,0 +1,72 @@
+# DeepSeek Harness 第三方参考站 —— MkDocs 配置
+# site_url 已预填为你的 GitHub Pages 地址（lili-sxdt/dsh-website）
+
+site_name: DeepSeek Harness 参考
+site_description: 第三方研究者整理的 DeepSeek Harness 参考读物（非官方）
+site_author: 李利课题组 · 小迪
+
+# 站点地址（已预填为你的真实值）
+site_url: "https://lili-sxdt.github.io/dsh-website/"
+
+theme:
+  name: material
+  language: zh
+  logo: assets/dsh-architecture.png   # 角落小标（可选，可去掉）
+  favicon: assets/dsh-architecture.png
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色模式
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs          # 一级导航做成 Tab
+    - navigation.top           # 返回顶部
+    - search.suggest           # 搜索建议
+    - search.highlight         # 搜索高亮
+    - content.code.copy        # 代码复制按钮
+    - toc.follow               # 侧栏目录跟随滚动
+    - content.tabs.link
+
+# 唯一导航：7 大板块（由浅入深 + 可查 + 动态）
+nav:
+  - 首页: index.md
+  - 快速上手: quickstart.md
+  - 进阶开发: advanced.md
+  - 架构: architecture.md
+  - 术语表: glossary.md
+  - FAQ: faq.md
+  - 更新日志: changelog.md
+  - 上线检查单: launch-checklist.md
+
+markdown_extensions:
+  - admonition              # 提示框（!!! note / warning ...）
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true   # 分页/列表切换样式
+  - pymdownx.tasklist:
+      custom_checkbox: true   # 可勾选清单
+
+plugins:
+  - search                                   # 站内搜索（前端）
+  - git-revision-date-localized:             # 每页自动显示"最后更新"（来自 git），免手动
+      enabled: true
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+
+extra:
+  generator: false   # 隐藏"Made with Material"字样
+  social:
+    - icon: material/github
+      link: https://github.com/deepseek-ai/DeepSeek-Harness

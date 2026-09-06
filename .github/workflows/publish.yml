@@ -1,0 +1,32 @@
+name: 构建并发布
+
+# PR 合并到 main 后（或手动触发）：用 MkDocs 构建站点并推送到 gh-pages 分支。
+# 需要在仓库 Settings → Pages 里把「Build and deployment」来源设为 `gh-pages` 分支。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin
+
+      - name: 构建并部署到 gh-pages
+        run: mkdocs gh-deploy --force
