@@ -40,7 +40,8 @@ SAMPLE_RELEASES = [
 
 def load_state():
     if os.path.exists(STATE):
-        with open(STATE, encoding="utf-8") as f:
+        # 用 utf-8-sig：既能读无 BOM，也能自动剔除有 BOM 的文件（防 Windows BOM 坑）
+        with open(STATE, encoding="utf-8-sig") as f:
             return json.load(f)
     return {"latest_tag": None, "seen_tags": []}
 
