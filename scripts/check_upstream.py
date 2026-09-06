@@ -55,16 +55,20 @@ def fmt_date(iso):
 
 
 def clean_text(text):
+    """把官方 release body 净化成一行简短摘要：剥掉 HTML 标签、i18n 切换器、markdown。"""
     s = text or ""
-    s = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", s)
-    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)
-    s = re.sub(r"```.*?```", " ", s, flags=re.S)
-    s = re.sub(r"^#{1,6}\s*", "", s, flags=re.M)
-    s = re.sub(r"[*_`~>]", "", s)
+    s = re.sub(r"<[^>]+>", " ", s)                  # HTML 标签
+    s = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", s)      # 图片
+    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)  # 链接 -> 文字
+    s = re.sub(r"```.*?```", " ", s, flags=re.S)    # 代码块
+    s = re.sub(r"^#{1,6}\s*", "", s, flags=re.M)    # 标题标记
+    s = re.sub(r"[*_`~>#]", "", s)                   # 强调/代码/标题符
+    s = s.replace("|", " ")                          # 竖线（含 中文|English 切换）-> 空格
     s = re.sub(r"\s+", " ", s).strip()
-    s = s.replace("|", "\\|")
-    if len(s) > 90:
-        s = s[:90].rstrip() + "…"
+    s = re.sub(r"^中文\s*English\s*", "", s)         # 去掉开头的 i18n 切换噪音
+    s = s.replace("|", "\\|")                        # 保险：转义残存竖线
+    if len(s) > 60:
+        s = s[:60].rstrip() + "…"
     return s
 
 
@@ -96,11 +100,10 @@ def get_npm_times(sample):
 def make_row(rel, npm_times):
     tag = rel.get("tag_name", "?")
     date = fmt_date(rel.get("published_at", ""))
-    summary = clean_text(rel.get("body", ""))
     link = "https://github.com/{0}/releases/tag/{1}".format(REPO, tag)
     # 匹配 npm 发布时间：优先规范化版本，其次原 tag
     npm_date = npm_times.get(norm_version(tag)) or npm_times.get(tag) or "—"
-    return "| [{0}]({1}) | {2} | {3} | {4} |".format(tag, link, date, npm_date, summary)
+    return "| [{0}]({1}) | {2} | {3} | [查看更新日志]({1}) |".format(tag, link, date, npm_date)
 
 
 def insert_rows(path, rows):

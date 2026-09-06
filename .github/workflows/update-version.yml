@@ -1,8 +1,8 @@
-name: 版本列表更新（开 PR 待审核）
+name: 版本列表自动更新
 
-# 每天检测 DeepSeek-Harness 上游新版本 → 把新版本及其官方更新说明追加到版本列表 → 开 PR 待审核。
-# 需仓库 Settings -> Actions -> General 里勾选 "Allow GitHub Actions to create and approve pull requests"。
-
+# 每天检测 DeepSeek-Harness 上游新版本 + npm，直接更新版本列表并自动发布。
+# 说明：GITHUB_TOKEN 提交到 main 不会触发 deploy-pages（防递归），所以本工作流在提交推送后
+#      显式 dispatch 触发展开工作流重新发布（deploy-pages 需含 workflow_dispatch）。
 on:
   schedule:
     - cron: "0 9 * * *"
@@ -10,14 +10,14 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write          # 用于触发 deploy-pages 重新发布
 
 concurrency:
-  group: version-track
+  group: version-list
   cancel-in-progress: false
 
 jobs:
-  check:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码
@@ -33,24 +33,19 @@ jobs:
       - name: 安装依赖
         run: pip install requests
 
-      - name: 检测上游新版本
+      - name: 检测上游新版本并更新版本表
         run: python scripts/check_upstream.py --apply
 
-      - name: 开 PR（仅当有变更时）
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: "🤖 检测到 DeepSeek-Harness 新版本，请审阅后合并"
-          branch: version-list/upstream
-          commit-message: "docs(version-status): 自动追加新版本及官方更新说明"
-          delete-branch: true
-          body: |
-            ## 自动更新 · 审阅后合并
-
-            本 PR 由 `scripts/check_upstream.py` 自动生成，内容来自上游[官方 Releases](https://github.com/deepseek-ai/deepseek-harness/releases)。
-
-            **请在合并前：**
-            - [ ] 核对版本号与日期
-            - [ ] 确认官方更新说明无误
-            - [ ] 确认后合并（合并即上线）
-            确认无误后合并，合并即上线。
+      - name: 提交并推送 + 触发重新发布
+        run: |
+          git add docs/version-status.md state/last_seen.json
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "docs(version-status): 自动更新版本列表"
+            git push
+            echo "已更新并推送，触发重新发布…"
+            gh workflow run deploy-pages.yml --ref main
+          else
+            echo "无新版本，跳过。"
+          fi
