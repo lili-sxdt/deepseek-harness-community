@@ -22,12 +22,12 @@
         
       
       
-      <link rel="icon" href="assets/dsh-architecture.png">
+      <link rel="icon" href="assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>DeepSeek Harness 参考</title>
+        <title>DSH 参考</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deepseek-harness" class="md-skip">
+        <a href="#dsh" class="md-skip">
           跳转至
         </a>
       
@@ -92,9 +92,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="DeepSeek Harness 参考" class="md-header__button md-logo" aria-label="DeepSeek Harness 参考" data-md-component="logo">
+    <a href="." title="DSH 参考" class="md-header__button md-logo" aria-label="DSH 参考" data-md-component="logo">
       
-  <img src="assets/dsh-architecture.png" alt="logo">
+  <img src="material/book-open-page-variant" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            DeepSeek Harness 参考
+            DSH 参考
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -363,12 +363,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="DeepSeek Harness 参考" class="md-nav__button md-logo" aria-label="DeepSeek Harness 参考" data-md-component="logo">
+    <a href="." title="DSH 参考" class="md-nav__button md-logo" aria-label="DSH 参考" data-md-component="logo">
       
-  <img src="assets/dsh-architecture.png" alt="logo">
+  <img src="material/book-open-page-variant" alt="logo">
 
     </a>
-    DeepSeek Harness 参考
+    DSH 参考
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -443,7 +443,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这是什么
+        一句话认识它
       
     </span>
   </a>
@@ -454,7 +454,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        给谁看、怎么用
+        新手最速入口（从哪开始）
       
     </span>
   </a>
@@ -465,7 +465,29 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        本站说明与声明
+        本站有什么（内容一览）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本站声明
       
     </span>
   </a>
@@ -672,7 +694,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这是什么
+        一句话认识它
       
     </span>
   </a>
@@ -683,7 +705,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        给谁看、怎么用
+        新手最速入口（从哪开始）
       
     </span>
   </a>
@@ -694,7 +716,29 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        本站说明与声明
+        本站有什么（内容一览）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本站声明
       
     </span>
   </a>
@@ -718,41 +762,41 @@
 
 
 
-<h1 id="deepseek-harness">DeepSeek Harness 参考</h1>
+<h1 id="dsh">DSH 参考</h1>
 <blockquote>
-<p>🗂 本站是<strong>第三方研究者</strong>整理的 DeepSeek Harness 参考读物，方便自查，也供他人参考。</p>
+<p>一份给研究者的 DeepSeek Harness 参考读物。第三方整理，<strong>非官方</strong>，以官方为准。</p>
 </blockquote>
-<h2 id="_1">这是什么</h2>
-<p>DeepSeek Harness（DSH）是 DeepSeek 开源的、模块化、<strong>可插拔</strong>的 Agent 运行 / 开发框架——
-把 Agent 拆成零件（模型 / 工具 / Skill / 子代理），再像搭积木一样组装、调度、记忆与回滚。</p>
-<p>本站从<strong>研究者视角</strong>整理它的机制、用法与演进，重点是<strong>讲清楚 + 可溯源</strong>，而非官方宣传。</p>
-<h2 id="_2">给谁看、怎么用</h2>
+<h2 id="_1">一句话认识它</h2>
+<p><strong>DeepSeek Harness（DSH）</strong> 是一个可插拔、模块化的 <strong>Agent 运行 / 开发框架</strong>——
+把 Agent 拆成可插拔的零件（模型 / 工具 / Skill / 子代理），再像搭积木一样组装、调度、记忆与回滚。</p>
+<p>它最特别的一点：能把 <strong>Codex / Claude Code</strong> 等外部 Agent <strong>收编为子代理</strong>，统一调度。</p>
+<h2 id="_2">新手最速入口（从哪开始）</h2>
 <table>
 <thead>
 <tr>
-<th>你的目的</th>
-<th>去哪个板块</th>
+<th>你的状态</th>
+<th>建议先看</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>想快速体验</td>
+<td>完全没接触，想快速理解</td>
+<td><strong><a href="architecture/">架构</a></strong>（先看那张总览图，再读机制）</td>
+</tr>
+<tr>
+<td>想马上上手跑一个</td>
 <td><strong><a href="quickstart/">快速上手</a></strong></td>
 </tr>
 <tr>
-<td>想深入开发</td>
+<td>想深入扩展</td>
 <td><strong><a href="advanced/">进阶开发</a></strong></td>
 </tr>
 <tr>
-<td>想懂原理与机制</td>
-<td><strong><a href="architecture/">架构</a></strong></td>
-</tr>
-<tr>
-<td>查一个概念</td>
+<td>遇到不懂的词</td>
 <td><strong><a href="glossary/">术语表</a></strong></td>
 </tr>
 <tr>
-<td>遇到疑问</td>
+<td>想了解它和别的 Agent 框架的关系</td>
 <td><strong><a href="faq/">FAQ</a></strong></td>
 </tr>
 <tr>
@@ -761,17 +805,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">本站说明与声明</h2>
+<h2 id="_3">本站有什么（内容一览）</h2>
 <ul>
-<li><strong>非官方</strong>：本站由第三方独立整理，与 DeepSeek 官方无隶属或利益关系。</li>
-<li><strong>仅供参考</strong>：机制描述以官方为准；本站可能滞后于官方最新版本。</li>
-<li><strong>信息日期</strong>：每页底部自动显示「最后更新」（来自 git），请以此判断新旧。</li>
-<li><strong>溯源</strong>：涉及官方信息尽量给出<a href="https://github.com/deepseek-ai/DeepSeek-Harness">官方仓库</a>或来源链接。</li>
+<li><strong><a href="quickstart/">快速上手</a></strong> —— 安装 → 第一个插件 → 第一个 Agent 任务</li>
+<li><strong><a href="advanced/">进阶开发</a></strong> —— 插件开发、子代理与工作流、模型适配、可复现与审计</li>
+<li><strong><a href="architecture/">架构</a></strong> —— 分层结构 + 关键机制（插件总线、回滚等）</li>
+<li><strong><a href="glossary/">术语表</a></strong> —— 概念 ↔ 英文 ↔ 一句话解释 ↔ 相关章节</li>
+<li><strong><a href="faq/">FAQ</a></strong> —— 关系类 / 使用类 / 排坑类常见问题</li>
+<li><strong><a href="changelog/">更新日志</a></strong> —— 版本列表（可点击跳官方 Releases）</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">本站立场</p>
-<p>本站以研究者视角整理，讲清楚 + 可溯源；若与官方最新版有出入，以官方为准。</p>
-</div>
+<h2 id="_4">常见问题速览</h2>
+<ul>
+<li><strong>它和 Codex / Claude Code 什么关系？</strong> → 它们可被 DSH 收编为子代理。详见 <a href="faq/">FAQ</a>。</li>
+<li><strong>是官方产品吗？</strong> → 框架是 DeepSeek 开源的，但<strong>本站是第三方整理</strong>。</li>
+<li><strong>想搭一个这样的参考站？</strong> → 仓库里有现成的 MkDocs 模板 + 自动更新流水线（详见仓库根 <code>README.md</code>）。</li>
+</ul>
+<h2 id="_5">本站声明</h2>
+<ul>
+<li><strong>非官方</strong>：由第三方独立整理，与 DeepSeek 官方无隶属或利益关系。</li>
+<li><strong>仅供参考</strong>：机制描述以官方为准；本站可能滞后于最新版本。</li>
+<li><strong>信息日期</strong>：每页底部自动显示「最后更新」（来自 git）。</li>
+<li><strong>溯源</strong>：涉及官方信息尽量给出<a href="https://github.com/deepseek-ai/deepseek-harness">官方仓库</a>或来源链接。</li>
+</ul>
 
 
 
@@ -794,7 +849,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月6日 14:09:08 UTC">2026年9月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月6日 14:44:32 UTC">2026年9月6日</span>
   </span>
 
     
