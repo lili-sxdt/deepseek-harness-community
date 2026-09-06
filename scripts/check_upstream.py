@@ -103,7 +103,7 @@ def make_row(rel, npm_times):
     link = "https://github.com/{0}/releases/tag/{1}".format(REPO, tag)
     # 匹配 npm 发布时间：优先规范化版本，其次原 tag
     npm_date = npm_times.get(norm_version(tag)) or npm_times.get(tag) or "—"
-    return "| [{0}]({1}) | {2} | {3} | [查看更新日志]({1}) |".format(tag, link, date, npm_date)
+    return "| [{0}]({1}) | {2} | {3} | [点击查看]({1}) |".format(tag, link, date, npm_date)
 
 
 def insert_rows(path, rows):
