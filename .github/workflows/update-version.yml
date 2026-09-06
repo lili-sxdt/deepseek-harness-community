@@ -37,6 +37,8 @@ jobs:
         run: python scripts/check_upstream.py --apply
 
       - name: 提交并推送 + 触发重新发布
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git add docs/version-status.md state/last_seen.json
           if ! git diff --cached --quiet; then
