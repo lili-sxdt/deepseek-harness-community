@@ -27,6 +27,5 @@ DeepSeek Harness（DSH）是 DeepSeek 开源的、模块化、**可插拔**的 A
 - **信息日期**：每页底部自动显示「最后更新」（来自 git），请以此判断新旧。
 - **溯源**：涉及官方信息尽量给出[官方仓库](https://github.com/deepseek-ai/DeepSeek-Harness)或来源链接。
 
-!!! note "站长维护"
-    - 完整搭建与上线步骤：见仓库根目录的 **[上线引导](LAUNCH_GUIDE.md)**。
-    - 上线与日常维护清单：见 **[上线检查单](launch-checklist.md)**。
+!!! note "本站立场"
+    本站以研究者视角整理，讲清楚 + 可溯源；若与官方最新版有出入，以官方为准。

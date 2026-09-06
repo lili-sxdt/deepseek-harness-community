@@ -40,7 +40,6 @@ nav:
   - 术语表: glossary.md
   - FAQ: faq.md
   - 更新日志: changelog.md
-  - 上线检查单: launch-checklist.md
 
 markdown_extensions:
   - admonition              # 提示框（!!! note / warning ...）

@@ -21,7 +21,7 @@
 ├─ mkdocs.yml                  站点配置（导航/主题/搜索/每页更新时间）
 ├─ init_repo.ps1 / .sh         一键本地初始化（git init + 提交 + 推送）
 ├─ LAUNCH_GUIDE.md             上线引导（先看这个）
-├─ docs/launch-checklist.md    上线/维护检查单（首页可勾选）
+├─ LAUNCH_CHECKLIST.md         上线/维护检查单（内部文档，不进公开站）
 ├─ docs/                       网站内容（改这里 = 改网站）
 │  ├─ index.md  快速上手  进阶开发  架构  术语表  FAQ  更新日志
 │  └─ assets/dsh-architecture.png
