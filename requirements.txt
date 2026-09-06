@@ -1,6 +1,0 @@
-# 站点构建依赖（云端 Actions 与本地构建用）
-mkdocs-material>=9.5
-mkdocs-git-revision-date-localized-plugin>=1.2
-
-# 更新检测脚本依赖
-requests>=2.31

@@ -1,0 +1,56 @@
+name: 版本跟踪更新（开 PR 待审核）
+
+# 每天检测 DeepSeek-Harness 上游新版本 → 追加"待验证"草稿到版本状态表 → 开 PR 待维护者确认。
+# 需仓库 Settings -> Actions -> General 里勾选 "Allow GitHub Actions to create and approve pull requests"。
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: version-track
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 检测上游新版本
+        run: python scripts/check_upstream.py --apply
+
+      - name: 开 PR（仅当有变更时）
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "🤖 检测到 DeepSeek-Harness 新版本，请确认适配状态"
+          branch: version-track/upstream
+          commit-message: "docs(version-status): 自动追加上游新版本"
+          delete-branch: true
+          body: |
+            ## 自动更新 · 审阅后合并
+
+            本 PR 由 `scripts/check_upstream.py` 自动生成，仅含「新版本号 ⬜ 待验证」草稿。
+
+            **请在合并前：**
+            - [ ] 核对新版本号
+            - [ ] 实际验证后更新「本站验证状态」（✅ 已验证 / ⚠️ 部分兼容 / ⬜ 待验证）
+            - [ ] 补「迁移说明」
+            确认无误后合并，合并即上线。

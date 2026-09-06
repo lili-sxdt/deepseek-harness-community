@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="104" fill="#1f4e79"/>
+  <!-- 层叠块 + 连接，代表"组装 / 编排 / harness" -->
+  <rect x="128" y="150" width="120" height="70" rx="14" fill="#8fbfe6"/>
+  <rect x="264" y="150" width="120" height="70" rx="14" fill="#c3d9ee"/>
+  <rect x="196" y="286" width="120" height="72" rx="14" fill="#5b9bd5"/>
+  <path d="M190 224 v62 M322 224 v62" stroke="#eef6ff" stroke-width="18" stroke-linecap="round"/>
+</svg>

@@ -1,44 +1,58 @@
-# dsh-website —— DeepSeek Harness 第三方参考站
+# DeepSeek-Harness-Community
 
-> 第三方研究者整理的 **DeepSeek Harness 参考读物**（方便自查，也供他人参考）。
-> 归档位置：`research-assistant/demo-foundation/`（系统演示 / 测试归档，非研究产物）。
+> ⚠️ **本项目为社区第三方文档 & 模板仓库，非 DeepSeek 官方项目，不代表官方立场**
+> 同步上游：[deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)，文档验证版本见[版本状态](/version-status)。
 
-## 这是一个可直接上线的静态站
-技术栈：**MkDocs(Material) + GitHub Pages + GitHub Actions**，无后台、无服务器、无需额外凭据。
-自动更新：每天检测 DSH 官方新版本 → 生成纯事实草稿 → 开 PR → 你审（补点评）→ 合并 → 自动上线。
+[![Docs](https://img.shields.io/badge/Docs-GitHubPages-blue)](https://lili-sxdt.github.io/deepseek-harness-community/)
 
-## 🚀 上线：请看《上线引导》
-- **`LAUNCH_GUIDE.md`** —— 从本地推到 GitHub、开 Pages、跑起自动更新的完整步骤。
+社区实战手册、配置模板库、排错知识库，弥补官方文档实战案例不足。
+聚焦本地部署、多模型评测、Agent 编排、多卡服务器落地、二次开发。
 
-## 💻 一键初始化
-- Windows：目录里运行 `.\init_repo.ps1`
-- macOS/Linux：运行 `bash init_repo.sh`
-- 自动完成 `git init` → 首次提交 → 绑定远程 → 推送 main。
-- 可直接给地址免提问：`.\init_repo.ps1 -RepoUrl "https://github.com/lili-sxdt/dsh-website.git"`。
+## 📚 文档站点
 
-## 目录
+👉 **https://lili-sxdt.github.io/deepseek-harness-community/**
+
+## 📂 仓库结构
+
 ```
-├─ mkdocs.yml                  站点配置（导航/主题/搜索/每页更新时间）
-├─ init_repo.ps1 / .sh         一键本地初始化（git init + 提交 + 推送）
-├─ LAUNCH_GUIDE.md             上线引导（先看这个）
-├─ LAUNCH_CHECKLIST.md         上线/维护检查单（内部文档，不进公开站）
-├─ docs/                       网站内容（改这里 = 改网站）
-│  ├─ index.md  快速上手  进阶开发  架构  术语表  FAQ  更新日志
-│  └─ assets/dsh-architecture.png
-├─ scripts/check_dsh_updates.py  自动检测更新脚本
-├─ state/last_seen.json          更新状态（记住上次版本）
-├─ tools/draw_architecture.py    架构图生成脚本（matplotlib）
-├─ figures/ 、 slides/           设计源文件（架构图 SVG/PNG、内容原型 HTML）
-└─ .github/workflows/            云端自动化（update.yml / publish.yml）
+deepseek-harness-community/
+├── docs/                # VitePress 文档源文件
+├── templates/           # 可直接复用模板
+│   ├── deploy/          # docker-compose 部署模板
+│   ├── configs/         # harness config.yaml 各类场景配置
+│   ├── datasets/        # 评测样例数据集
+│   └── scripts/         # 结果解析、数据集转换辅助脚本（待补充）
+├── scripts/             # 版本跟踪脚本（check_upstream.py）
+├── state/               # 版本跟踪状态
+└── .github/workflows/   # GitHub Pages 构建 + 版本跟踪
 ```
 
-## 本地预览
-```bash
-pip install -r requirements.txt
-mkdocs serve      # 打开 http://127.0.0.1:8000
-```
+## ✨ 提供什么
 
-## 内容更新（日常）
-改 `docs/*.md` → `git push` → 自动上线。DSH 出新版只需审一个自动 PR。
+- 完整中文实战文档：架构拆解、部署指南、配置字段详解
+- 大量实战 yaml 模板：模型接入、Agent 多智能体、压测、评测任务
+- 高频问题排查库，汇总上游 issue 踩坑经验
+- 版本跟踪：自动检测上游新版本（半自动化）
 
-> 相关：内容原型见 `slides/`；首页主视觉架构图见 `figures/`。
+## 🚀 快速开始
+
+1. 阅读文档站[入门指南](/guide/intro)
+2. 复制 `templates/configs/minimal.config.yaml` 最小配置跑通验证
+3. 参考 `templates/deploy/docker-compose.yml` Docker 一键启动
+
+## ⚠️ 重要提醒
+
+1. 本仓库**不存储任何 API Key、模型权重**，密钥请使用环境变量注入
+2. 上游迭代较快，文档标注已验证版本，高版本上游可能存在配置不兼容
+3. 遇到问题优先查看[故障排查](/troubleshoot/common-issues)，欢迎到 Discussions 交流
+
+## 🤝 贡献
+
+欢迎提交：配置模板、排错案例、文档修正。
+[提交到仓库](https://github.com/lili-sxdt/deepseek-harness-community)
+
+## 🔗 相关项目
+
+- 上游：[deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
+- Hermes-Agent
+- vLLM / Ollama

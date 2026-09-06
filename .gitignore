@@ -1,14 +1,16 @@
-# MkDocs 构建产物
-site/
+# 依赖与构建产物
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
 
-# Python
+# Python（版本跟踪脚本）
 __pycache__/
 *.pyc
 .venv/
-venv/
 
 # 本地编辑器/系统
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
+*.log
