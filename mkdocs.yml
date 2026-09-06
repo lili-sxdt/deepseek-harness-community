@@ -11,7 +11,7 @@ site_url: "https://lili-sxdt.github.io/dsh-website/"
 theme:
   name: material
   language: zh
-  logo: material/book-open-page-variant   # 干净的书本图标
+  logo: assets/favicon.svg      # 用真实 SVG 图标（书本图），避免 material 图标名被当文件路径
   favicon: assets/favicon.svg
   palette:
     - scheme: default
