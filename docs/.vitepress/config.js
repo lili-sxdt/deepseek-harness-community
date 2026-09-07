@@ -4,7 +4,7 @@ import { execSync } from 'node:child_process'
 // footer 的「最后更新」= 最后一次 git 提交日期（构建时实时取，无需手改）
 function lastCommitDate() {
   try {
-    return execSync('git log -1 --format=%cd --date=format:%Y-%m-%d', { encoding: 'utf8' }).trim()
+    return execSync('git log -1 --format=%cd --date=format:%Y-%m-%d %H:%M', { encoding: 'utf8' }).trim()
   } catch {
     return ''
   }
