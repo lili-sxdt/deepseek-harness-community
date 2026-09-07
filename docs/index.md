@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: DeepSeek Harness 社区
-  text: 从入门到精通
-  tagline: 四堂课，把 DSH 变成你工作的一部分。
+  name: DSH中文社区
+  text: DeepSeek Harness
+  tagline: 从入门到精通 · 把 DSH 变成你工作的一部分
   image:
     src: /logo.svg
-    alt: DeepSeek Harness 社区
+    alt: DSH中文社区
   actions:
     - theme: brand
       text: 从第一课开始
