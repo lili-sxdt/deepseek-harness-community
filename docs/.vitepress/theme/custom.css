@@ -8,6 +8,21 @@
   justify-content: center;
 }
 
+/* 声明：一行灰色小字，最轻 */
+.site-note {
+  margin: 0 auto 4px;
+  max-width: 640px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
+
+/* 选你的起点：居中标题 */
+h2.center-title {
+  text-align: center;
+  font-size: 20px;
+}
+
 .lesson-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -61,6 +76,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 
 .promise-line span {

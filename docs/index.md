@@ -14,11 +14,9 @@ hero:
       link: /version-status
 ---
 
-::: warning 声明
-本站为**社区第三方站点**，非 DeepSeek 官方。具体命令、字段以官方与[版本列表](/version-status)为准。
-:::
+<div class="site-note">社区第三方站点 · 非官方 · 具体以官方与[版本列表](/version-status)为准</div>
 
-## 选你的起点
+## 选你的起点 {.center-title}
 
 <div class="lesson-grid">
   <a class="lesson-card" href="/learn/level-1/">
@@ -53,4 +51,4 @@ hero:
   <span>全程说人话</span>
 </div>
 
-> 从 `①` 一路走到 `④`，就是完整走一遍「从入门到精通」。
+<div class="site-note">从 ① 一路走到 ④，就是完整走一遍「从入门到精通」。</div>
