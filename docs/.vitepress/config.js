@@ -1,4 +1,15 @@
 import { defineConfig } from 'vitepress'
+import { execSync } from 'node:child_process'
+
+// footer 的「最后更新」= 最后一次 git 提交日期（构建时实时取，无需手改）
+function lastCommitDate() {
+  try {
+    return execSync('git log -1 --format=%cd --date=format:%Y-%m-%d', { encoding: 'utf8' }).trim()
+  } catch {
+    return ''
+  }
+}
+const lastUpdated = lastCommitDate()
 
 // 每课一个 section，下面挂 2 级子页（二级侧栏）
 // 名字统一 4 字基准：开课导览 · 知识点…… · 动手实战 · 出师检验
@@ -108,7 +119,7 @@ export default defineConfig({
     ],
     footer: {
       message: '社区第三方站点，非 DeepSeek 官方，仅供学习研究使用。具体内容以官方与版本列表为准。',
-      copyright: 'DSH中文社区'
+      copyright: `@DSH中文社区 · 最后更新：${lastUpdated || '—'}`
     }
   }
 })
