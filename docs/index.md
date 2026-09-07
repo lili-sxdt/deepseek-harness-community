@@ -4,7 +4,7 @@ layout: home
 hero:
   name: DeepSeek Harness 社区
   text: 从入门到精通
-  tagline: 四堂课，带一个完全不懂的人，走到能把 DSH 调教成自己工作的一部分。
+  tagline: 四堂课，从会用、看懂到能自己动手，把 DSH 变成你工作的一部分。
   image:
     src: /logo.svg
     alt: DeepSeek Harness 社区
@@ -13,39 +13,47 @@ hero:
       text: 从第一课开始
       link: /learn/level-1/
     - theme: alt
-      text: 看看这门课怎么走
-      link: /learn/level-1/
+      text: 看最新版本
+      link: /version-status
 ---
 
 ::: warning 声明
-本站为**社区第三方站点**，非 DeepSeek 官方，仅供学习研究使用。具体命令、字段以官方与[版本列表](/version-status)为准。
+本站为**社区第三方站点**，非 DeepSeek 官方。具体命令、字段以官方与[版本列表](/version-status)为准。
 :::
 
-## 这是一门课，不是一个文档索引
+## 选你的起点
 
-与其"堆很多资料让你自己翻"，不如**用四堂课，沿着一条路带你走**。每一步都有明确的目标、能动手、能验收。
+<div class="lesson-grid">
+  <a class="lesson-card" href="/learn/level-1/">
+    <span class="badge">①</span>
+    <strong>认知上手</strong>
+    <em>完全没用过</em>
+    <span class="to">学完 → 会用</span>
+  </a>
+  <a class="lesson-card" href="/learn/level-2/">
+    <span class="badge">②</span>
+    <strong>概念运用</strong>
+    <em>会用但在懵</em>
+    <span class="to">学完 → 懂 + 会用对</span>
+  </a>
+  <a class="lesson-card" href="/learn/level-3/">
+    <span class="badge">③</span>
+    <strong>应用构建</strong>
+    <em>想为工作做东西</em>
+    <span class="to">学完 → 用 DSH 做东西</span>
+  </a>
+  <a class="lesson-card" href="/learn/level-4/">
+    <span class="badge">④</span>
+    <strong>框架扩展</strong>
+    <em>想调成合自己用</em>
+    <span class="to">学完 → 精通</span>
+  </a>
+</div>
 
-## 选你的起点 · 一路走到精通
+<div class="promise-line">
+  <span>理解深入</span>
+  <span>动手简单</span>
+  <span>全程说人话</span>
+</div>
 
-| 你在哪 | 进哪课 | 学完你会到哪 |
-|---|---|---|
-| 🟦 完全没用过 | [第一课 · 认知上手](/learn/level-1/) | **会用**：装好、跑通、派件活 |
-| 🟩 会用但在懵 | [第二课 · 概念运用](/learn/level-2/) | **懂 + 会用对**：看懂名词、选对工具 |
-| 🟨 想为自己的活做东西 | [第三课 · 应用构建](/learn/level-3/) | **用 DSH 做东西**：写 skill、串流程 |
-| 🟪 想把它调成合自己用 | [第四课 · 框架扩展](/learn/level-4/) | **精通**：加一个新能力，为你的活服务 |
-
-> 从 [第一课] 一路走到 [第四课]，就是完整走一遍"**从入门到精通**"。
-
-## 这门课的三个承诺
-
-1. **理解深入**——不堆术语，用"一家工作室"的比方把道理讲透。
-2. **动手简单**——手把手，每一步能复制、能自查、卡住有救。
-3. **说人话**——专业词都配中文解释，绝不术语堆叠。
-
-## 版本与更新
-
-| 当前 | 说明 |
-|---|---|
-| 最新版本 | 见[版本列表](/version-status)（自动同步官方） |
-
-> 上游迭代快，**以"版本列表"标注为准**，别拿旧内容套新版本。社区内容仅供参考。
+> 从 `①` 一路走到 `④`，就是完整走一遍「从入门到精通」。

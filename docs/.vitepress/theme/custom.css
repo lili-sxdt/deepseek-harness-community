@@ -1,0 +1,63 @@
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 28px 0 8px;
+}
+
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 18px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-soft);
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+
+.lesson-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .08);
+  transform: translateY(-2px);
+}
+
+.lesson-card .badge {
+  font-size: 15px;
+  color: var(--vp-c-brand-1);
+}
+
+.lesson-card strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lesson-card em {
+  font-style: normal;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
+
+.lesson-card .to {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--vp-c-brand-1);
+}
+
+.promise-line {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.promise-line span {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
