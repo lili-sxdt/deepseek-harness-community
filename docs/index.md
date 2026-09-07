@@ -17,8 +17,6 @@ hero:
       link: /version-status
 ---
 
-<div class="site-note">社区第三方站点 · 非官方 · 具体以官方与[版本列表](/version-status)为准</div>
-
 ## 选你的起点 {.center-title}
 
 <LessonCards />
@@ -29,4 +27,4 @@ hero:
   <span>全程说人话</span>
 </div>
 
-<div class="site-note">从 ① 一路走到 ④，就是完整走一遍「从入门到精通」。</div>
+<div class="site-note">从「认知上手」一路走到「框架扩展」，就是完整走一遍「从入门到精通」。</div>

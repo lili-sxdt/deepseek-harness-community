@@ -27,18 +27,24 @@ h2.center-title {
 
 .lesson-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 28px 0 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin: 36px 0 8px;
+}
+
+@media (max-width: 720px) {
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .lesson-card {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 20px 18px;
+  gap: 12px;
+  padding: 30px 28px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
+  border-radius: 14px;
   text-decoration: none;
   color: var(--vp-c-text-1);
   background: var(--vp-c-bg-soft);
@@ -47,29 +53,24 @@ h2.center-title {
 
 .lesson-card:hover {
   border-color: var(--vp-c-brand-1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .08);
-  transform: translateY(-2px);
-}
-
-.lesson-card .badge {
-  font-size: 15px;
-  color: var(--vp-c-brand-1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+  transform: translateY(-3px);
 }
 
 .lesson-card strong {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 650;
 }
 
 .lesson-card em {
   font-style: normal;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--vp-c-text-2);
 }
 
 .lesson-card .to {
-  margin-top: 2px;
-  font-size: 13px;
+  margin-top: 6px;
+  font-size: 15px;
   color: var(--vp-c-brand-1);
 }
 
