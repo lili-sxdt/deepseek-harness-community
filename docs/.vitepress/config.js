@@ -1,10 +1,13 @@
 import { defineConfig } from 'vitepress'
 import { execSync } from 'node:child_process'
 
-// footer 的「最后更新」= 最后一次 git 提交日期（构建时实时取，无需手改）
+// footer 的「最后更新」= 最后一次 git 提交的时间（构建时实时取；%cI 单个控制符，避免 Windows 对 % 的解析坑）
 function lastCommitDate() {
   try {
-    return execSync('git log -1 --format=%cd --date=format:%Y-%m-%d %H:%M', { encoding: 'utf8' }).trim()
+    const iso = execSync('git log -1 --format=%cI', { encoding: 'utf8' }).trim()
+    // iso 形如 2026-09-07T14:23:45+08:00 —— 取"提交方本地时间"的日期+时分
+    const m = iso.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/)
+    return m ? `${m[1]} ${m[2]}` : iso
   } catch {
     return ''
   }
