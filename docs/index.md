@@ -5,6 +5,9 @@ hero:
   name: DeepSeek Harness 社区
   text: 从入门到精通
   tagline: 四堂课，把 DSH 变成你工作的一部分。
+  image:
+    src: /logo.svg
+    alt: DeepSeek Harness 社区
   actions:
     - theme: brand
       text: 从第一课开始

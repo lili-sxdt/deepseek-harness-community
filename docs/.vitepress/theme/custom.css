@@ -1,14 +1,5 @@
-/* 首页 hero 居中（无侧图，避免标题被挤断） */
-.VPHero .main {
-  text-align: center;
-  align-items: center;
-}
-
-.VPHero .actions {
-  justify-content: center;
-}
-
-/* 收小 hero：避免头重脚轻 & 标题被挤断成两行 */
+/* 首页 hero：右侧放 logo（标准两栏：左文字、右图） */
+/* 收小 hero 标题字号：避免左侧标题被"社区"拆成两行 */
 .VPHero .name {
   font-size: 40px !important;
   line-height: 1.15;
@@ -16,11 +7,7 @@
 
 .VPHero .main {
   padding-top: 40px;
-  padding-bottom: 8px;
-}
-
-.VPHero {
-  min-height: 0;
+  padding-bottom: 12px;
 }
 
 /* 声明：一行灰色小字，最轻 */
