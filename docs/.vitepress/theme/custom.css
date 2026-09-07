@@ -5,6 +5,15 @@
   line-height: 1.15;
 }
 
+/* 两行副标题：DeepSeek Harness / 从入门到精通，同量级 */
+.VPHero .text {
+  font-size: 24px;
+}
+
+.VPHero .tagline {
+  font-size: 20px;
+}
+
 .VPHero .main {
   padding-top: 40px;
   padding-bottom: 12px;

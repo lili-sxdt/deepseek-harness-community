@@ -62,7 +62,7 @@ const versionSidebar = [
 ]
 
 export default defineConfig({
-  title: 'DeepSeek Harness 社区',
+  title: 'DSH中文社区',
   description: '从入门到精通：四堂课带你从会用 DSH，到把它调教成自己工作的一部分。',
   base: '/deepseek-harness-community/',
   lang: 'zh-CN',
@@ -94,7 +94,7 @@ export default defineConfig({
     ],
     footer: {
       message: '社区第三方站点，非 DeepSeek 官方，仅供学习研究使用。具体内容以官方与版本列表为准。',
-      copyright: 'DeepSeek Harness 社区'
+      copyright: 'DSH中文社区'
     }
   }
 })

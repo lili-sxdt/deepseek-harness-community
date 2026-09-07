@@ -4,7 +4,7 @@ layout: home
 hero:
   name: DSH中文社区
   text: DeepSeek Harness
-  tagline: 从入门到精通 · 把 DSH 变成你工作的一部分
+  tagline: 从入门到精通
   image:
     src: /logo.svg
     alt: DSH中文社区
