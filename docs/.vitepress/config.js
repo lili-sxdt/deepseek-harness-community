@@ -61,6 +61,18 @@ const versionSidebar = [
   }
 ]
 
+const deepDiveSidebar = [
+  {
+    text: '深度参考',
+    items: [
+      { text: '深度参考', link: '/deep-dive/' },
+      { text: '文件系统', link: '/deep-dive/filesystem' },
+      { text: '真实接口', link: '/deep-dive/api' },
+      { text: '定位速查', link: '/deep-dive/route' }
+    ]
+  }
+]
+
 export default defineConfig({
   title: 'DSH中文社区',
   description: '从入门到精通：四堂课带你从会用 DSH，到把它调教成自己工作的一部分。',
@@ -81,10 +93,12 @@ export default defineConfig({
       { text: '概念运用', link: '/learn/level-2/' },
       { text: '应用构建', link: '/learn/level-3/' },
       { text: '框架扩展', link: '/learn/level-4/' },
+      { text: '深度参考', link: '/deep-dive/' },
       { text: '版本', link: '/version-status' }
     ],
     sidebar: {
       '/learn/': learnSidebar,
+      '/deep-dive/': deepDiveSidebar,
       '/version-status': versionSidebar
     },
     search: { provider: 'local' },
