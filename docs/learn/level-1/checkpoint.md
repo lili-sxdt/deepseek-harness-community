@@ -14,9 +14,10 @@ title: 出师检验
 
 ## 检验二：能不能装好、跑通？
 
-**从头自己走一遍**：下载 DSH → 用 Docker 起服务 → 确认它是 `running`。
+**从头自己走一遍**：装好 Node → 跑**一条命令** `npx @deepseek-ai/dsh web` → 访问 `http://127.0.0.1:3080/` 看到界面。
 
 - 完成，说明"安装 + 跑通"真的会了。
+- 想更可控（源码/自己带模型），可改用[快速装通](/learn/level-1/install-and-run)里的**路 B · 源码 + Docker**。
 - 卡住，回[快速装通](/learn/level-1/install-and-run)看救急，再试。
 
 ## 检验三：能不能派活 + 验收？

@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 // 名字统一 4 字基准：开课导览 · 知识点…… · 动手实战 · 出师检验
 const learnSidebar = [
   {
-    text: '① 认知上手',
+    text: '认知上手',
     collapsed: false,
     items: [
       { text: '开课导览', link: '/learn/level-1/' },
@@ -15,7 +15,7 @@ const learnSidebar = [
     ]
   },
   {
-    text: '② 概念运用',
+    text: '概念运用',
     collapsed: false,
     items: [
       { text: '开课导览', link: '/learn/level-2/' },
@@ -27,7 +27,7 @@ const learnSidebar = [
     ]
   },
   {
-    text: '③ 应用构建',
+    text: '应用构建',
     collapsed: false,
     items: [
       { text: '开课导览', link: '/learn/level-3/' },
@@ -39,7 +39,7 @@ const learnSidebar = [
     ]
   },
   {
-    text: '④ 框架扩展',
+    text: '框架扩展',
     collapsed: false,
     items: [
       { text: '开课导览', link: '/learn/level-4/' },
@@ -77,10 +77,10 @@ export default defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '① 认知上手', link: '/learn/level-1/' },
-      { text: '② 概念运用', link: '/learn/level-2/' },
-      { text: '③ 应用构建', link: '/learn/level-3/' },
-      { text: '④ 框架扩展', link: '/learn/level-4/' },
+      { text: '认知上手', link: '/learn/level-1/' },
+      { text: '概念运用', link: '/learn/level-2/' },
+      { text: '应用构建', link: '/learn/level-3/' },
+      { text: '框架扩展', link: '/learn/level-4/' },
       { text: '版本', link: '/version-status' }
     ],
     sidebar: {
