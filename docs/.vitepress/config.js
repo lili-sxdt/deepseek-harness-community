@@ -1,23 +1,69 @@
 import { defineConfig } from 'vitepress'
 
-// 「帮助中心」侧栏（多个路径共用）
-const helpSidebar = [
+// 每课一个 section，下面挂 2 级子页（二级侧栏）
+// 名字统一 4 字基准：开课导览 · 知识点…… · 动手实战 · 出师检验
+const learnSidebar = [
   {
-    text: '帮助中心',
+    text: '① 认知上手',
+    collapsed: false,
     items: [
-      { text: '帮助中心', link: '/help' },
-      { text: 'FAQ', link: '/faq' },
-      { text: '故障排查', link: '/troubleshoot/common-issues' },
-      { text: '版本', link: '/version-status' },
-      { text: '贡献指南', link: '/contributing' },
-      { text: '最佳实践', link: '/best-practices' }
+      { text: '开课导览', link: '/learn/level-1/' },
+      { text: '认识助手', link: '/learn/level-1/what-is-assistant' },
+      { text: '快速装通', link: '/learn/level-1/install-and-run' },
+      { text: '动手实战', link: '/learn/level-1/hands-on' },
+      { text: '出师检验', link: '/learn/level-1/checkpoint' }
+    ]
+  },
+  {
+    text: '② 概念运用',
+    collapsed: false,
+    items: [
+      { text: '开课导览', link: '/learn/level-2/' },
+      { text: '架构总览', link: '/learn/level-2/architecture' },
+      { text: '概念精讲', link: '/learn/level-2/concepts' },
+      { text: '选型决策', link: '/learn/level-2/choose' },
+      { text: '动手实战', link: '/learn/level-2/hands-on' },
+      { text: '出师检验', link: '/learn/level-2/checkpoint' }
+    ]
+  },
+  {
+    text: '③ 应用构建',
+    collapsed: false,
+    items: [
+      { text: '开课导览', link: '/learn/level-3/' },
+      { text: '构建总览', link: '/learn/level-3/overview' },
+      { text: '编写技能', link: '/learn/level-3/skill' },
+      { text: '流程编排', link: '/learn/level-3/pipeline' },
+      { text: '动手实战', link: '/learn/level-3/hands-on' },
+      { text: '出师检验', link: '/learn/level-3/checkpoint' }
+    ]
+  },
+  {
+    text: '④ 框架扩展',
+    collapsed: false,
+    items: [
+      { text: '开课导览', link: '/learn/level-4/' },
+      { text: '扩展总览', link: '/learn/level-4/overview' },
+      { text: '插件开发', link: '/learn/level-4/plugin' },
+      { text: '架构解读', link: '/learn/level-4/structure' },
+      { text: '毕业项目', link: '/learn/level-4/project' },
+      { text: '出师检验', link: '/learn/level-4/checkpoint' }
+    ]
+  }
+]
+
+const versionSidebar = [
+  {
+    text: '版本与更新',
+    items: [
+      { text: '版本列表', link: '/version-status' }
     ]
   }
 ]
 
 export default defineConfig({
-  title: "DSH中文社区",
-  description: "DeepSeek-Harness 中文场景化实践站：看懂它是什么、照着模板、立刻跑起来。",
+  title: 'DeepSeek Harness 社区',
+  description: '从入门到精通：四堂课带你从会用 DSH，到把它调教成自己工作的一部分。',
   base: '/deepseek-harness-community/',
   lang: 'zh-CN',
   lastUpdated: true,
@@ -30,59 +76,16 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-      { text: '社区首页', link: '/' },
-      { text: '入门指南', link: '/guide/intro' },
-      { text: '进阶实践', link: '/guide/advanced' },
-      { text: '模板中心', link: '/templates/' },
-      { text: '帮助中心', link: '/help' },
-      { text: 'GitHub', link: 'https://github.com/lili-sxdt/deepseek-harness-community' }
+      { text: '首页', link: '/' },
+      { text: '① 认知上手', link: '/learn/level-1/' },
+      { text: '② 概念运用', link: '/learn/level-2/' },
+      { text: '③ 应用构建', link: '/learn/level-3/' },
+      { text: '④ 框架扩展', link: '/learn/level-4/' },
+      { text: '版本', link: '/version-status' }
     ],
     sidebar: {
-      '/guide/': [
-        {
-          text: '入门指南',
-          items: [
-            { text: '入门指南', link: '/guide/intro' },
-            { text: '最小示例', link: '/guide/minimal-demo' }
-          ]
-        },
-        {
-          text: '进阶实践',
-          items: [
-            { text: '概览', link: '/guide/advanced' },
-            { text: '插件（Plugin）', link: '/guide/plugin' },
-            { text: '技能（Skill）', link: '/guide/skill' },
-            { text: '工作流（Workflow）', link: '/guide/workflow' },
-            { text: '子代理（Subagent）', link: '/guide/subagent' },
-            { text: '自定义 Agent & 预设', link: '/guide/custom-agent' }
-          ]
-        },
-        {
-          text: '参考',
-          items: [
-            { text: '配置参考', link: '/config/config-yaml' },
-            { text: '目录结构', link: '/guide/dir-struct' }
-          ]
-        }
-      ],
-      '/config/': [
-        {
-          text: '参考',
-          items: [
-            { text: '配置参考', link: '/config/config-yaml' },
-            { text: '目录结构', link: '/guide/dir-struct' }
-          ]
-        }
-      ],
-      '/templates/': [
-        { text: '模板中心', link: '/templates/' }
-      ],
-      '/help/': helpSidebar,
-      '/faq/': helpSidebar,
-      '/troubleshoot/': helpSidebar,
-      '/version-status/': helpSidebar,
-      '/contributing/': helpSidebar,
-      '/best-practices/': helpSidebar
+      '/learn/': learnSidebar,
+      '/version-status': versionSidebar
     },
     search: { provider: 'local' },
     outline: { level: [2, 3] },
@@ -90,8 +93,8 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/lili-sxdt/deepseek-harness-community' }
     ],
     footer: {
-      message: '社区第三方站点，非 DeepSeek 官方，仅供学习研究使用。',
-      copyright: 'DSH中文社区'
+      message: '社区第三方站点，非 DeepSeek 官方，仅供学习研究使用。具体内容以官方与版本列表为准。',
+      copyright: 'DeepSeek Harness 社区'
     }
   }
 })
