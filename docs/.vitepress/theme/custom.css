@@ -1,3 +1,13 @@
+/* 首页 hero 居中（无侧图，避免标题被挤断） */
+.VPHero .main {
+  text-align: center;
+  align-items: center;
+}
+
+.VPHero .actions {
+  justify-content: center;
+}
+
 .lesson-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
